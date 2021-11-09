@@ -1,1 +1,1 @@
-CV [r-makarov.github.io](r-makarov.github.io)
+CV [r-makarov.github.io](http://r-makarov.github.io/)
