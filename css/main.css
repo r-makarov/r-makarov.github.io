@@ -266,6 +266,11 @@ body .main .end {
   text-align: center;
 }
 
+img {
+  width: 30px;
+  height: 30px;
+}
+
 @media only screen and (max-width: 500px) {
   .date {
     float: none !important;
