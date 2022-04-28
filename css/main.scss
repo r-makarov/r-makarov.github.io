@@ -1,9 +1,12 @@
-$main-color: white;
-$highlight-color: darkgray;
+$main-color: whitesmoke;
+$highlight-color: white;
+$dim-color: darkgray;
 // $link-color: rgba(255, 166, 0, 0.7);
 $link-color: tan;
 $location-color: lightblue;
 $nice-color: rgb(146, 73, 73);
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 
 .dark-mode * {
     color: black !important;
@@ -13,7 +16,7 @@ $nice-color: rgb(146, 73, 73);
 }
 
 .dark-mode a {
-    color: $nice-color !important;
+    color: dodgerblue !important;
 }
 
 
@@ -22,13 +25,15 @@ $nice-color: rgb(146, 73, 73);
     
     .main {
         background-color: white;
-       
+        font-family: Arial, Helvetica, sans-serif;
+        .end {
+            display: none;}
     }
 }
 
 body {
     background: rgb(37, 37, 37);
-    font-family: monospace;
+    font-family: 'Inconsolata', monospace;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -46,7 +51,7 @@ body {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background-color: $highlight-color;
+            background-color: $dim-color;
             margin: 2px;
             margin-bottom: 5px;
             border-radius: 50px;
@@ -95,12 +100,12 @@ body {
             display: flex;
             justify-content: center;
             .name {
-                color: $main-color;
+                color: $highlight-color;
             }
             .surname {
-                color: $main-color;
-                font-weight: bold;
-                padding-left: 5px;
+                color: $highlight-color;
+                padding-left: 15px;
+                font-weight: 600;
             }
         }
 
@@ -125,6 +130,12 @@ body {
         .section {
             margin: 0 20px;
             color: $main-color;
+
+            .publication-type{
+                color: $highlight-color;
+                font-weight: bold;
+            }
+
             .item {
                 margin: 10px 10px;
                 color: $main-color;
@@ -143,8 +154,10 @@ body {
                     color: $highlight-color;
                 }
 
+              
+
                 .title {
-                    font-style: italic;
+                    
                     width: 90%;
                     color: $main-color;
                 }
@@ -152,13 +165,13 @@ body {
                 .authors {
                     width: 90%;
                     overflow-wrap: break-word;
-                    color: $highlight-color;
+                    color: $dim-color;
                 }
 
                 .journal {
                     width: 90%;
                     overflow-wrap: break-word;
-                    color: $highlight-color;
+                    color: $dim-color;
                 }
 
                 .location {
@@ -169,13 +182,16 @@ body {
 
                 .event {
                     span {
-                        color: $highlight-color;
+                        color: $dim-color;
                     }
                 }
             }
 
             .skills-tree {
                 padding-inline-start: 28px;
+                span {
+                    color: $dim-color;
+                }
                 li {
                     font-size: larger;
                     font-weight: bold;
