@@ -7,6 +7,7 @@ $location-color: lightblue;
 $nice-color: rgb(146, 73, 73);
 
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 .dark-mode * {
     color: black !important;
@@ -33,7 +34,7 @@ $nice-color: rgb(146, 73, 73);
 
 body {
     background: rgb(37, 37, 37);
-    font-family: 'Inconsolata', monospace;
+    font-family: "Inconsolata", monospace;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;

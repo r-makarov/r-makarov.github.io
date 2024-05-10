@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 .dark-mode * {
   color: black !important;
 }
@@ -148,8 +149,7 @@ body .main .section .item .event span {
   color: darkgray;
 }
 body .main .section .skills-tree {
-  -webkit-padding-start: 28px;
-          padding-inline-start: 28px;
+  padding-inline-start: 28px;
 }
 body .main .section .skills-tree span {
   color: darkgray;
