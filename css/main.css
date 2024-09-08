@@ -133,6 +133,7 @@ body .main {
   flex-wrap: nowrap;
   justify-content: flex-start;
   width: 700px;
+  padding-left: 50px;
 }
 body .main #summary-section {
   color: white;
