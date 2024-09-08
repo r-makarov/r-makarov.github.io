@@ -1,4 +1,6 @@
-$main-color: whitesmoke;
+$dark-background: black;
+$light-background: white;
+$main-color: white;
 $highlight-color: white;
 $dim-color: darkgray;
 // $link-color: rgba(255, 166, 0, 0.7);
@@ -6,135 +8,242 @@ $link-color: tan;
 $location-color: lightblue;
 $nice-color: rgb(146, 73, 73);
 
+$bold-weight: 500;
+$normal-weight: 400;
+
+$large-font: 3em;
+$medium-font: 1.5em;
+$normal-font: 1em;
+
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 .dark-mode * {
     color: black !important;
 
-    .authors, .authors b, .journal, .event * {color: rgb(61, 61, 61) !important}
-     
+    .authors,
+    .authors b,
+    .journal,
+    .event * {
+        color: rgb(61, 61, 61) !important;
+    }
 }
+
+
+    .dark-mode img {
+        filter: invert(1) hue-rotate(180deg) !important; /* Inverts the image colors */
+    }
 
 .dark-mode a {
     color: dodgerblue !important;
 }
 
+.dark-mode .menu-item {
+    border-color: black !important;
+    a {
+    color: black !important;
+    }
+}
+
+.dark-mode .download-button button {
+    background: white !important;
+    color: black !important;
+    border: 1px solid black !important;
+    a {
+        color: black !important;
+    }
+}
 
 .dark-mode {
     background-color: white;
-    
+
     .main {
         background-color: white;
-        font-family: Arial, Helvetica, sans-serif;
-        .end {
-            display: none;}
+        // font-family: Arial, Helvetica, sans-serif;
+        // .end {
+        //     display: none;
+        // }
     }
 }
 
 body {
-    background: rgb(37, 37, 37);
-    font-family: "Inconsolata", monospace;
+    background: $dark-background;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
 
-    .navbar {
-        padding: 0px 5px;
-        color: brown;
+    #top-div {
+        background-color: red;
+        position: fixed;
+        top: 10vh;
+        left: 50vw;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+    }
+
+    .left-menu {
+        position: fixed;
+        left: 5vw;
+        top: 25vh;
         display: flex;
-        justify-content: flex-end;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 50vh;
+        width: 200px;
+        // padding-right: 42px;
+        // border-right: 1px solid $main-color;
 
-        .toggle-switch {
-            height: 10px;
-            width: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background-color: $dim-color;
-            margin: 2px;
-            margin-bottom: 5px;
-            border-radius: 50px;
-            cursor: pointer;
-            padding: 2px;
-            // border: solid 1px rgba(126, 126, 126, 0.07);
-            
-            
-            
+        .menu-item {
+            text-align: right;
+            a {
+                margin: 10px 0;
+                padding-right: 20px;
+                font-size: $medium-font;
+                font-weight: $normal-weight;
+                color: $main-color;
+                cursor: pointer;
+                transition: 0.3s;
+                text-decoration: none;
+            }
+
+            &:hover {
+                color: $highlight-color;
+            }
         }
 
-        .toggle-switch .toggle-knob {
-            width: 10px;
-            height: 10px;
-            display: inline-block;
-            background-color: rgb(37, 37, 37); 
-            
-            border-radius: 10px;
-            
-            margin-left: 20px;
+        .selected {
+            color: $highlight-color;
+            border-right: 2px solid $highlight-color;
+        }
+    }
+
+    .buttons {
+        position: fixed;
+        right: 5vw;
+        top: 10vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 80vh;
+        .download-button {
+            button {
+                padding: 10px 20px;
+                font-size: $medium-font;
+                font-weight: 300;
+                background: rgb(0, 0, 0, 0);
+                color: $main-color;
+                border: 1px solid $main-color;
+                cursor: pointer;
+
+                &:hover {
+                    background: $dim-color;
+                    color: black;
+                }
+
+                a {
+                    color: $main-color;
+                    text-decoration: none;
+                }
+            }
         }
 
-        .toggle-switch.active .toggle-knob {
-            background-color: rgb(233, 233, 233);
-            
-        }
+        .theme-button {
+            button {
+                padding: 10px;
+                background: rgb(0, 0, 0, 0);
+                border: none;
+                cursor: pointer;
+                outline: none;
 
-        .toggle-switch.active .toggle-knob {
-            margin-left: 0px;
+                #theme-icon {
+                    width: 45px;
+                    height: 45px;
+                }
+            }
         }
     }
 
     .main {
-        background: rgba(80, 80, 80, 0.1);
         flex-direction: column;
         flex-wrap: nowrap;
         justify-content: flex-start;
-        min-height: 95vh;
         width: 700px;
 
-        .name-surname {
-            padding-top: 10px;
+        #summary-section {
             color: $main-color;
-            font-size: 3em;
-            margin: 0 20px;
+            padding: 22vh 100px 50vh 20px;
             display: flex;
-            justify-content: center;
-            .name {
-                color: $highlight-color;
+            flex-direction: column;
+            justify-content: left;
+
+            .name-surname {
+                color: $main-color;
+                font-size: $large-font;
+                font-weight: $bold-weight;
+                display: flex;
+                justify-content: left;
+                .name {
+                    color: $highlight-color;
+                }
+                .surname {
+                    color: $highlight-color;
+                    padding-left: 15px;
+                }
             }
-            .surname {
-                color: $highlight-color;
-                padding-left: 15px;
-                font-weight: 600;
+
+            ul {
+                font-size: $medium-font;
+                font-weight: $normal-weight;
+                margin-bottom: 30px;
+                text-align: justify;
+                list-style-type: none; // Removes the default list markers
+                padding: 0;
             }
-        }
 
-        .contacts {
-            color: $main-color;
-            display: flex;
-            justify-content: space-evenly;
-            padding: 5px;
-        }
+            li {
+                padding-left: 5px;
+                margin-bottom: 10px;
+                &:before {
+                    content: ''; /* Removes the custom markers */
+                }
+            }
 
-        .links {
-            display: flex;
-            justify-content: center;
-            padding-bottom: 10px;
+            .links {
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 10px;
+                padding-right: 150px;
+                img {
+                    width: 42px;
+                    height: 42px;
+                    border-radius: 50%;
+                }
 
-            a {
-                color: $link-color;
-                margin: 5px 10px;
+                a {
+                    color: $link-color;
+                    margin: 5px 5px;
+                }
             }
         }
 
         .section {
-            margin: 0 20px;
+            margin: 0 0 100px 0px;
             color: $main-color;
 
-            .publication-type{
+            h1 {
+                font-size: 2em;
+                font-weight: $bold-weight;
+                margin-bottom: 20px;
+            }
+
+            .publication-type {
                 color: $highlight-color;
-                font-weight: bold;
+                font-weight: $normal-weight;
             }
 
             .item {
@@ -150,15 +259,12 @@ body {
                 }
 
                 .position-title {
-                    font-weight: bold;
+                    font-weight: $normal-weight;
                     font-size: larger;
                     color: $highlight-color;
                 }
 
-              
-
                 .title {
-                    
                     width: 90%;
                     color: $main-color;
                 }
@@ -195,7 +301,6 @@ body {
                 }
                 li {
                     font-size: larger;
-                    font-weight: bold;
                     color: $highlight-color;
                     margin: 10px 0px;
                     ul {
@@ -204,35 +309,34 @@ body {
                         li {
                             font-size: medium;
 
-                            color: white;
-                            font-weight: normal;
+                            color: $main-color;
                             ul {
                                 margin-bottom: 0px;
                                 li {
                                     font-size: smaller;
                                 }
                                 li::marker {
-                                    content: "│      ├── ";
+                                    content: '│      ├── ';
                                     letter-spacing: 0px;
                                 }
                                 li:last-child::marker {
-                                    content: "│      └── ";
+                                    content: '│      └── ';
                                     letter-spacing: 0px;
                                 }
                             }
                         }
                         li::marker {
-                            content: "├── ";
+                            content: '├── ';
                             color: rgba(129, 110, 81, 0.5);
                         }
                         li:last-child::marker {
-                            content: "└── ";
+                            content: '└── ';
                             color: rgba(129, 110, 81, 0.5);
                         }
                         li:last-child {
                             ul {
                                 li::marker {
-                                    content: "└── ";
+                                    content: '└── ';
                                     color: rgba(129, 110, 81, 0.5);
                                 }
                             }
@@ -247,7 +351,7 @@ body {
 
         .end {
             opacity: 50%;
-            margin: 50px 0;
+            margin: 70vh 0 50px 0;
             text-align: center;
         }
     }
@@ -258,12 +362,16 @@ img {
     height: 30px;
 }
 
-@media only screen and (max-width: 500px){
-    
-    
-
+@media only screen and (max-width: 500px) {
     .date {
-        float: none !important; 
+        float: none !important;
     }
 
+    .left-menu {
+        display: none !important;
+    }
+
+    .buttons {
+        display: none !important;
+    }
 }

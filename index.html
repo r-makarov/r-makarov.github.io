@@ -1,418 +1,619 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Roman Makarov CV</title>
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roman Makarov CV</title>
-    <link rel="stylesheet" href="css/main.css">
+    <body>
 
-</head>
-
-<body>
-
-
-
-    <div class="main">
-        <div class="navbar">
-            <span title="dark mode" class="toggle-switch">
-                <span class="toggle-knob"></span>
-            </span>
-        </div>
-
-        <div class="name-surname">
-            <div class="name" id="name">Roman</div>
-            <div class="surname">Makarov</div>
-        </div>
-
-
-
-
-
-        <div class="contacts">roman_makarov@imbb.forth.gr</div>
-        <div class="contacts">Heraklion, Greece</div>
-
-
-        <div class="links">
-
-            <a href="https://github.com/r-makarov">github</a>
-            <a href="https://scholar.google.ru/citations?user=lKXJREUAAAAJ&hl=en">scholar</a>
-            
-
-
-        </div>
-        <hr>
-        <div class="section">
-            <h1>Education</h1>
-
-            <div class="item">
-
-                <div class="date">2021-present</div>
-                <div class="position-title">PhD in Biology</div>
-                <div class="institution">SmartNets ITN<br><a href="https://www.smartnets-etn.eu">smartnets-etn.eu</a></div>
-                <div class="institution">University of Crete, </div>
-                <div class="location">Heraklion, Greece</div>
-            </div>
-
-            <div class="item">
-                <div class="date">2016-2018</div>
-                <div class="position-title">MSc in Biology</div>
-                <div class="comment">Specialization in neurobiology, Honors</div>
-                <div class="institution">Kazan Federal University</div>
-                <div class="location">Kazan, Russia</div>
-            </div>
-
-            <div class="item">
-                <div class="date">2010-2015</div>
-                <div class="position-title">Specialist Degree in Civil Engineering</div>
-
-                <div class="institution">Ufa State Petroleum Technological University</div>
-                <div class="location">Ufa, Russia</div>
-            </div>
-
-        </div>
-        <hr>
-        <div class="section">
-            <h1>Research Experience</h1>
-
-            <div class="item">
-                <div class="date">2021-present</div>
-                <div class="position-title">Researcher</div>
-                <div class="institution">Poirazi Lab <br><a href="https://www.dendrites.gr">dendrites.gr</a></div>
-                <div class="institution">Institute of Molecular Biology and Biotechnology</div>
-                <div class="institution">Foundation for Research and Technology-Hellas</div>
-                <div class="location">Heraklion, Greece</div>
-            </div>
-
-            <div class="item">
-                <div class="date">2018-2021</div>
-                <div class="position-title">Junior Researcher</div>
-                <div class="institution">IAL Developmental Neurobiology <br><a
-                        href="https://www.ial-developmental-neurobiology.com/en/">ial-developmental-neurobiology.com</a>
+        <div class="left-menu">
+                <div class="menu-item selected">
+                    <a href="#summary-section">SUMMARY</a>
                 </div>
-                <div class="institution">Institute of Fundamental Medicine and Biology</div>
-                <div class="institution">Kazan Federal University </div>
-                <div class="location">Kazan, Russia</div>
+                <div class="menu-item">
+                    <a href="#education-section">EDUCATION</a>
+                </div>
+                <div class="menu-item">
+                    <a href="#employment-section">EMPLOYMENT</a>
+                </div>
+                <div class="menu-item">
+                    <a href="#research-section">RESEARCH</a>
+                </div>
+                <div class="menu-item">
+                    <a href="#publications-section">PUBLICATIONS</a>
+                </div>
+                <div class="menu-item">
+                    <a href="#conferences-section">CONFERENCES</a>
+                </div>
+                <div class="menu-item">
+                    <a href="#awards-section">AWARDS</a>
+                </div>
+        </div>
+        <div class="buttons">
 
+            <label class="theme-button active" id="theme-button">
+                <button>
+                    <img
+                        id="theme-icon"
+                        src="static/images/sun.png"
+                        alt="theme"
+                    />
+                </button>
+            </label>
+
+            <div class="download-button">
+                <button>
+                    <!-- <a href="CV.pdf" download>Download</a> -->
+                    <a href="">Download</a>
+                </button>
             </div>
 
-            <div class="item">
-                <div class="date">2016-2018</div>
-                <div class="position-title">Research Assistant</div>
-                <div class="institution">IAL Developmental Neurobiology</div>
-                <div class="institution">Institute of Fundamental Medicine and Biology</div>
-                <div class="institution">Kazan Federal University</div>
-                <div class="location">Kazan, Russia</div>
 
+        </div>
+
+        <div class="main">
+
+            <div class="section" id="summary-section">
+                <div class="name-surname">
+                    <div class="name" id="name">ROMAN</div>
+                    <div class="surname">MAKAROV</div>
+                </div>
+                <ul>
+                    <li>Neurobiologist</li>
+                    <li>PhD candidate at Poirazi Lab</li>
+                    <li>Heraklion, Greece</li>
+                </ul>
+
+                <div class="links">
+                    <script>
+                        var name = 'roman_makarov';
+                        var domain = 'imbb.forth.gr';
+                        var image = 'static/images/email.png';
+                        document.write(
+                            '<a href="mailto:' +
+                                name +
+                                '@' +
+                                domain +
+                                '">' +
+                                '<img src="' +
+                                image +
+                                '"/></a>'
+                        );
+                    </script>
+                    <script>
+                        var github = 'r-makarov';
+                        var image = 'static/images/github.png';
+                        document.write(
+                            '<a href="https://github.com/' +
+                                github +
+                                '">' +
+                                '<img src="' +
+                                image +
+                                '"/></a>'
+                        );
+                    </script>
+                    <script>
+                        var scholar = 'citations?user=lKXJREUAAAAJ&hl=en';
+                        var image = 'static/images/scholar.png';
+                        document.write(
+                            '<a href="https://scholar.google.com/' +
+                                scholar +
+                                '">' +
+                                '<img src="' +
+                                image +
+                                '"/></a>'
+                        );
+                    </script>
+                    <script>
+                        var twitter = '_RomanMakarov';
+                        var image = 'static/images/x.png';
+                        document.write(
+                            '<a href="https://twitter.com/' +
+                                twitter +
+                                '">' +
+                                '<img src="' +
+                                image +
+                                '"/></a>'
+                        );
+                    </script>
+                </div>
             </div>
 
+            
+            <div class="section" id="education-section">
+
+                <hr>
+                <h1>Education</h1>
+
+                <div class="item">
+                    <div class="date">2021-present</div>
+                    <div class="position-title">PhD in Biology</div>
+                    <div class="institution">
+                        SmartNets ITN<br /><a
+                            href="https://www.smartnets-etn.eu"
+                            >smartnets-etn.eu</a
+                        >
+                    </div>
+                    <div class="institution">University of Crete,</div>
+                    <div class="location">Heraklion, Greece</div>
+                </div>
+
+                <div class="item">
+                    <div class="date">2016-2018</div>
+                    <div class="position-title">MSc in Biology</div>
+                    <div class="comment">
+                        Specialization in neurobiology, Honors
+                    </div>
+                    <div class="institution">Kazan Federal University</div>
+                    <div class="location">Kazan, Russia</div>
+                </div>
+
+                <div class="item">
+                    <div class="date">2010-2015</div>
+                    <div class="position-title">
+                        Specialist Degree in Civil Engineering
+                    </div>
+
+                    <div class="institution">
+                        Ufa State Petroleum Technological University
+                    </div>
+                    <div class="location">Ufa, Russia</div>
+                </div>
+            </div>
+            
+            <div class="section" id="employment-section">
+                <hr />
+                <h1>Employment</h1>
+
+                <div class="item">
+                    <div class="date">2021-present</div>
+                    <div class="position-title">Researcher</div>
+                    <div class="institution">
+                        Poirazi Lab <br /><a href="https://www.dendrites.gr"
+                            >dendrites.gr</a
+                        >
+                    </div>
+                    <div class="institution">
+                        Institute of Molecular Biology and Biotechnology
+                    </div>
+                    <div class="institution">
+                        Foundation for Research and Technology-Hellas
+                    </div>
+                    <div class="location">Heraklion, Greece</div>
+                </div>
+
+                <div class="item">
+                    <div class="date">2018-2021</div>
+                    <div class="position-title">Junior Researcher</div>
+                    <div class="institution">
+                        IAL Developmental Neurobiology <br /><a
+                            href="https://www.ial-developmental-neurobiology.com/en/"
+                            >ial-developmental-neurobiology.com</a
+                        >
+                    </div>
+                    <div class="institution">
+                        Institute of Fundamental Medicine and Biology
+                    </div>
+                    <div class="institution">Kazan Federal University</div>
+                    <div class="location">Kazan, Russia</div>
+                </div>
+
+                <div class="item">
+                    <div class="date">2016-2018</div>
+                    <div class="position-title">Research Assistant</div>
+                    <div class="institution">
+                        IAL Developmental Neurobiology
+                    </div>
+                    <div class="institution">
+                        Institute of Fundamental Medicine and Biology
+                    </div>
+                    <div class="institution">Kazan Federal University</div>
+                    <div class="location">Kazan, Russia</div>
+                </div>
+            </div>
+            
+            <div class="section" id="research-section">
+                <hr />
+                <h1>Research</h1>
+                <ul class="skills-tree">
+                    <li>
+                        Computational skills
+                        <ul>
+                            <li>
+                                Programming Languages
+                                <span>(Python, MATLAB)</span>
+                            </li>
+                            <li>
+                                Modeling and simulation
+                                <span>(NEURON, BRIAN2)</span>
+                            </li>
+                            <li>
+                                Machine learning
+                                <span>(sklearn, XGBoost, Pytorch, Keras)</span>
+                            </li>
+                            <li>
+                                Data analysis
+                                <span>(neo, MNE, Klusta, SpyKING CIRCUS)</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Experimental skills
+                        <ul>
+                            <li>Surgery in rodents</li>
+                            <li><i>In-vivo</i> electrophysiology</li>
+                            <li>Histology</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Research management skills
+                        <ul>
+                            <li>Linux system administration</li>
+                            <li>Version control</li>
+                            <li>
+                                Knowledge management <span>(ontologies)</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Communication skills
+                        <ul>
+                            <li>Scientific writing and publishing</li>
+                            <li>Scientific visualization</li>
+                            <li>Web development</li>
+                            <li>
+                                Languages
+                                <ul>
+                                    <li>
+                                        English
+                                        <span
+                                            >(advanced, TOEFL iBT 100/120)</span
+                                        >
+                                    </li>
+                                    <li>Russian <span>(native)</span></li>
+                                    <li>Greek <span>(elementary)</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="section" id="publications-section">
+                <hr />
+                <h1>Publications</h1>
+
+                <div class="publication-type">Preprints</div>
+                <ol>
+                    <li>
+                        <div class="item">
+                            <div class="date">2024</div>
+                            <div class="authors">
+                                <b>Roman Makarov</b>, Spyridon Chavlis,
+                                Panayiota Poirazi
+                            </div>
+                            <div class="title">
+                                <i>DendroTweaks</i>: An interactive approach for
+                                unraveling dendritic dynamics
+                            </div>
+                    </li>
+                </ol>
+
+                <div class="publication-type">Peer-reviewed journals</div>
+                <ol>
+                    <li>
+                        <div class="item">
+                            <div class="date">2024</div>
+                            <div class="authors">
+                                Michalis Pagkalos, <b>Roman Makarov</b>,
+                                Panayiota Poirazi
+                            </div>
+                            <div class="title">
+                                Leveraging dendritic properties to advance
+                                machine learning and neuro-inspired computing
+                            </div>
+
+                            <div class="journal">
+                                Current Opinion in Neurobiology <b>85</b>,
+                                102853
+                            </div>
+                            <a href="https://doi.org/10.1016/j.conb.2024.102853"
+                                >https://doi.org/10.1016/j.conb.2024.102853</a
+                            >
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="date">2023</div>
+                            <div class="authors">
+                                <b>Roman Makarov</b>, Michalis Pagkalos,
+                                Panayiota Poirazi
+                            </div>
+                            <div class="title">
+                                Dendrites and efficiency: Optimizing performance
+                                and resource utilization
+                            </div>
+
+                            <div class="journal">
+                                Current Opinion in Neurobiology <b>83</b>,
+                                102812
+                            </div>
+                            <a href="https://doi.org/10.1016/j.conb.2023.102812"
+                                >https://doi.org/10.1016/j.conb.2023.102812</a
+                            >
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="date">2021</div>
+                            <div class="authors">
+                                <b>Roman Makarov</b>, Mikhail Sintsov, Guzel
+                                Valeeva, Pavel Starikov, Dmitry Negrov, Roustem
+                                Khazipov
+                            </div>
+                            <div class="title">
+                                Bone conducted responses in the neonatal rat
+                                auditory cortex
+                            </div>
+
+                            <div class="journal">
+                                Scientific Reports <b>11</b>, 16777
+                            </div>
+                            <a href="https://doi.org/10.1038/s41598-021-96188-9"
+                                >https://doi.org/10.1038/s41598-021-96188-9</a
+                            >
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="date">2019</div>
+                            <div class="authors">
+                                Guzel Valeeva, Sona Janackova, Azat Nasretdinov,
+                                Veronika Rychkova, <b>Roman Makarov</b>, Gregory
+                                L Holmes, Roustem Khazipov, Pierre-Pascal
+                                Lenck-Santini
+                            </div>
+                            <div class="title">
+                                Emergence of Coordinated Activity in the
+                                Developing Entorhinal–Hippocampal Network
+                            </div>
+
+                            <div class="journal">
+                                Cerebral Cortex <b>29</b>, Issue 2
+                            </div>
+                            <a href="https://doi.org/10.1093/cercor/bhy309"
+                                >https://doi.org/10.1093/cercor/bhy309</a
+                            >
+                        </div>
+                    </li>
+                </ol>
+
+                <div class="publication-type">Conference proceedings</div>
+                <ol>
+                    <li>
+                        <div class="item">
+                            <div class="date">2024</div>
+                            <div class="authors">
+                                <b>Roman Makarov</b>, Spyridon Chavlis,
+                                Panayiota Poirazi
+                            </div>
+                            <div class="title">
+                                DendroTweaks: An interactive approach for
+                                unraveling dendritic dynamics
+                            </div>
+                            <div class="journal">
+                                Science Communications World Wide
+                            </div>
+                            <a href="https://doi.org/10.57736/abba-7149"
+                                >https://doi.org/10.57736/abba-7149</a
+                            >
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="date">2021</div>
+                            <div class="authors">
+                                Azat Nasretdinov, <b>Roman Makarov</b>, Alina
+                                Vazetdinova, Fliza Valiullina-Rakhmatullina,
+                                Alexandr Evstifeev, Roustem Khazipov
+                            </div>
+                            <div class="title">
+                                Sequence to sequence reconstruction of
+                                whole-cell signals from the cell-attached
+                                current-clamp recordings
+                            </div>
+                            <div class="journal">
+                                European Journal of Clinical Investigation,
+                                <b>51</b>, pp. 99-99
+                            </div>
+                            <a href=" https://doi.org/10.1111/eci.13567"
+                                >https://doi.org/10.1111/eci.13567</a
+                            >
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="date">2019</div>
+                            <div class="authors">
+                                Gulshat Burkhanova, <b>Roman Makarov</b>,
+                                Mikhail Sintsov, Guzel Valeeva, Roustem Khazipov
+                            </div>
+                            <div class="title">
+                                Unsupervised learning of activity patterns in
+                                the neonatal rat auditory cortex
+                            </div>
+
+                            <div class="journal">
+                                European Journal of Clinical Investigation.
+                                Special Issue: Abstracts of the 53rd Annual
+                                Scientific Meeting of the European Society for
+                                Clinical Investigation, Coimbra, Portugal
+                                <b>29</b>, Issue 2
+                            </div>
+                            <a href="https://doi.org/10.1111/eci.13109"
+                                >https://doi.org/10.1111/eci.13109</a
+                            >
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="section" id="conferences-section">
+                <hr />
+                <h1>Conferences</h1>
+                <ol>
+                    <li>
+                        <div class="item">
+                            <div class="date">2024</div>
+                            <div class="event">
+                                FENS Forum <span>(poster)</span>
+                            </div>
+
+                            <div class="location">Vienna, Austria</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="date">2024</div>
+                            <div class="event">
+                                EMBO Workshop "Principles of dendritic function
+                                and computation"<span>(poster)</span>
+                            </div>
+
+                            <div class="location">Chania, Greece</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="date">2023</div>
+                            <div class="event">
+                                30th Meeting of the Hellenic Society for
+                                Neuroscience, HSfN <span>(poster)</span>
+                            </div>
+
+                            <div class="location">Athens, Greece</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="date">2023</div>
+                            <div class="event">
+                                Free and Open Source Software Communities
+                                Meeting, FOSSCOMM <span>(booth)</span>
+                            </div>
+
+                            <div class="location">Heraklion, Greece</div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="item">
+                            <div class="date">2021</div>
+                            <div class="event">
+                                Neuromatch 3.0 <span>(traditional talk)</span>
+                            </div>
+
+                            <div class="location">Virtual conference</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="date">2019</div>
+                            <div class="event">
+                                Bernstein Conference <span>(poster)</span>
+                            </div>
+                            <div class="location">Berlin, Germany</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="date">2019</div>
+                            <div class="event">
+                                53rd Annual Scientific Meeting of the European
+                                Society for Clinical Investigation
+                                <span>(poster)</span>
+                            </div>
+                            <div class="location">Coimbra, Portugal</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="date">2018</div>
+                            <div class="event">
+                                The International Conference “CCCP 2018 -
+                                Cortical Codes: Control & Perception”<span
+                                    >(poster)</span
+                                >
+                            </div>
+                            <div class="location">Moscow, Russia</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="date">2018</div>
+                            <div class="event">
+                                The 4th International Conference “Brain-Computer
+                                Interface: Science and Practice”
+                                <span>(poster)</span>
+                            </div>
+                            <div class="location">Samara, Russia</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="date">2018</div>
+                            <div class="event">
+                                The 14th International Conference “Adaptation of
+                                Developing Organism”
+                                <span>(poster)</span>
+                            </div>
+                            <div class="location">Kazan, Russia</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="date">2017</div>
+                            <div class="event">
+                                The 10th Conference of Young Biology Scientists
+                                “SymBioSE Russia”
+                                <span>(poster)</span>
+                            </div>
+                            <div class="location">Kazan, Russia</div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="section" id="awards-section">
+                <hr />
+                <h1>Awards</h1>
+                <ul>
+                    <li>
+                        <div class="item">
+                            <div class="date">2023</div>
+                            <div class="event">
+                                Travel grant for the 30th Meeting of the
+                                Hellenic Society for Neuroscience
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="date">2021-2024</div>
+                            <div class="event">
+                                PhD scholarship, Marie Skłodowska-Curie Actions,
+                                Horizon 2020 programme of the European Union
+                            </div>
+                        </div>
+                    </li>
+
+                    <div class="end">Septemder, 2024</div>
+                </ul>
+            </div>
         </div>
-        <hr>
-        <div class="section">
-            <h1>Research Skills</h1>
-            <ul class="skills-tree">
-                <li>Computational skills
-                    <ul>
-                        <li>Programming Languages <span>(Python, MATLAB)</span> </li>
-                        <li>Modeling and simulation <span>(NEURON, BRIAN2)</span> </li>
-                        <li> Machine learning <span>(sklearn, XGBoost, Pytorch, Keras)</span></li>
-                        <li>Data analysis <span>(neo, MNE, Klusta, SpyKING CIRCUS)</span></li>
-                                
-                            
 
-                    </ul>
-                </li>
-                <li> Experimental skills
-                    <ul>
-                        <li>Surgery in rodents</li>
-                        <li><i>In-vivo</i> electrophysiology</li>
-                        <li>Histology</li>
-
-
-                    </ul>
-                </li>
-                <li>Research management skills
-                    <ul>
-                        <li>Linux system administration</li>
-                        <li>Version control</li>
-                        <li>Knowledge management <span>(ontologies)</span></li>
-
-                    </ul>
-                </li>
-                <li>Communication skills
-                    <ul>
-                        <li>Scientific writing and publishing</li>
-                        <li>Scientific visualization</li>
-                        <li>Web development </li>
-                        <li>Languages
-                            <ul>
-                                <li>English <span>(advanced, TOEFL iBT 100/120)</span></li>
-                                <li>Russian <span>(native)</span></li>
-                                <li>Greek <span>(elementary)</span></li>
-                            </ul>
-                        </li>
-
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <hr>
-        <div class="section">
-            <h1>Publications</h1>
-            <div class="publication-type">Peer-reviewed journals</div>
-            <ol>
-                <li>
-                    <div class="item">
-                        <div class="date">2024</div>
-                        <div class="authors">
-                            Michalis Pagkalos, <b>Roman Makarov</b>, Panayiota Poirazi
-                        </div>
-                        <div class="title">
-                            Leveraging dendritic properties to advance machine learning and neuro-inspired computing
-                        </div>
-
-                        <div class="journal">Current Opinion in Neurobiology <b>85</b>, 102853</div>
-                        <a
-                            href="https://doi.org/10.1016/j.conb.2024.102853">https://doi.org/10.1016/j.conb.2024.102853</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="item">
-                        <div class="date">2023</div>
-                        <div class="authors">
-                            <b>Roman Makarov</b>, Michalis Pagkalos, Panayiota Poirazi
-                        </div>
-                        <div class="title">
-                            Dendrites and efficiency: Optimizing performance and resource utilization
-                        </div>
-
-                        <div class="journal">Current Opinion in Neurobiology <b>83</b>, 102812</div>
-                        <a
-                            href="https://doi.org/10.1016/j.conb.2023.102812">https://doi.org/10.1016/j.conb.2023.102812</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="item">
-                        <div class="date">2021</div>
-                        <div class="authors">
-                            <b>Roman Makarov</b>, Mikhail Sintsov, Guzel Valeeva, Pavel Starikov, Dmitry Negrov, Roustem
-                            Khazipov
-                        </div>
-                        <div class="title">
-                            Bone conducted responses in the neonatal rat auditory cortex
-                        </div>
-
-                        <div class="journal">Scientific Reports <b>11</b>, 16777</div>
-                        <a
-                            href="https://doi.org/10.1038/s41598-021-96188-9">https://doi.org/10.1038/s41598-021-96188-9</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="item">
-                        <div class="date">2019</div>
-                        <div class="authors">Guzel Valeeva, Sona Janackova, Azat Nasretdinov, Veronika Rychkova,
-                            <b>Roman
-                                Makarov</b>,
-                            Gregory L Holmes, Roustem Khazipov, Pierre-Pascal Lenck-Santini
-                        </div>
-                        <div class="title">Emergence of Coordinated Activity in the Developing Entorhinal–Hippocampal
-                            Network
-                        </div>
-
-                        <div class="journal">Cerebral Cortex <b>29</b>, Issue 2</div>
-                        <a href="https://doi.org/10.1093/cercor/bhy309">https://doi.org/10.1093/cercor/bhy309</a>
-                    </div>
-                </li>
-            </ol>
-
-            <div class="publication-type">Conference proceedings</div>
-            <ol>
-                <li>
-                    <div class="item">
-                        <div class="date">2024</div>
-                        <div class="authors">
-                            <b>Roman Makarov</b>, Spyridon Chavlis, Panayiota Poirazi
-                        </div>
-                        <div class="title">DendroTweaks: An interactive approach for unraveling dendritic dynamics
-                        </div>
-                        <div class="journal">
-                            Science Communications World Wide
-                        </div>
-                        <a href="https://doi.org/10.57736/abba-7149">https://doi.org/10.57736/abba-7149</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="item">
-                        <div class="date">2021</div>
-                        <div class="authors">
-                            Azat Nasretdinov, <b>Roman Makarov</b>, Alina Vazetdinova, Fliza Valiullina-Rakhmatullina,
-                            Alexandr Evstifeev, Roustem Khazipov
-                        </div>
-                        <div class="title">Sequence to sequence reconstruction of whole-cell signals from the
-                            cell-attached current-clamp recordings
-                        </div>
-                        <div class="journal">
-                            European Journal of Clinical Investigation, <b>51</b>, pp. 99-99
-                        </div>
-                        <a href=" https://doi.org/10.1111/eci.13567">https://doi.org/10.1111/eci.13567</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="item">
-                        <div class="date">2019</div>
-                        <div class="authors">Gulshat Burkhanova, <b>Roman Makarov</b>, Mikhail Sintsov, Guzel Valeeva,
-                            Roustem
-                            Khazipov
-                        </div>
-                        <div class="title">Unsupervised learning of activity patterns in the neonatal rat auditory
-                            cortex
-                        </div>
-
-                        <div class="journal">European Journal of Clinical Investigation. Special Issue: Abstracts of the
-                            53rd
-                            Annual Scientific Meeting of the European Society for Clinical Investigation, Coimbra,
-                            Portugal
-                            <b>29</b>, Issue 2
-                        </div>
-                        <a href="https://doi.org/10.1111/eci.13109">https://doi.org/10.1111/eci.13109</a>
-                    </div>
-                </li>
-            </ol>
-        </div>
-        <hr>
-        <div class="section">
-            <h1>Conferences</h1>
-            <ol>
-                <li>
-                    <div class="item">
-                        <div class="date">2024</div>
-                        <div class="event">FENS Forum <span>(poster)</span></div>
-
-                        <div class="location"> Vienna, Austria</div>
-
-                    </div>
-                </li>
-                <li>
-                    <div class="item">
-                        <div class="date">2024</div>
-                        <div class="event">EMBO Workshop "Principles of dendritic function and computation"<span>(poster)</span></div>
-
-                        <div class="location"> Chania, Greece</div>
-
-                    </div>
-                </li>
-                <li>
-                    <div class="item">
-                        <div class="date">2023</div>
-                        <div class="event">30th Meeting of the Hellenic Society for Neuroscience, HSfN <span>(poster)</span></div>
-
-                        <div class="location"> Athens, Greece</div>
-
-                    </div>
-                </li>
-                <li>
-                    <div class="item">
-                        <div class="date">2023</div>
-                        <div class="event">Free and Open Source Software Communities Meeting, FOSSCOMM <span>(booth)</span></div>
-
-                        <div class="location"> Heraklion, Greece</div>
-
-                    </div>
-                <li>
-                    <div class="item">
-                        <div class="date">2021</div>
-                        <div class="event">Neuromatch 3.0 <span>(traditional talk)</span></div>
-
-                        <div class="location"> Virtual conference</div>
-
-                    </div>
-                </li>
-                <li>
-                    <div class="item">
-                        <div class="date">2019</div>
-                        <div class="event">Bernstein Conference <span>(poster)</span></div>
-                        <div class="location">Berlin, Germany</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="item">
-                        <div class="date">2019</div>
-                        <div class="event">53rd Annual Scientific Meeting of the European Society for Clinical
-                            Investigation <span>(poster)</span>
-                        </div>
-                        <div class="location">Coimbra, Portugal</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="item">
-                        <div class="date">2018</div>
-                        <div class="event">The International Conference “CCCP 2018 - Cortical Codes: Control &
-                            Perception”<span>(poster)</span>
-                        </div>
-                        <div class="location">Moscow, Russia</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="item">
-                        <div class="date">2018</div>
-                        <div class="event">The 4th International Conference “Brain-Computer Interface: Science and
-                            Practice”
-                            <span>(poster)</span>
-                        </div>
-                        <div class="location">Samara, Russia</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="item">
-                        <div class="date">2018</div>
-                        <div class="event">The 14th International Conference “Adaptation of Developing Organism”
-                            <span>(poster)</span>
-                        </div>
-                        <div class="location">Kazan, Russia</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="item">
-                        <div class="date">2017</div>
-                        <div class="event">The 10th Conference of Young Biology Scientists “SymBioSE Russia”
-                            <span>(poster)</span>
-                        </div>
-                        <div class="location">Kazan, Russia</div>
-                    </div>
-                </li>
-
-            </ol>
-
-        </div>
-        <hr>
-        <div class="section">
-            <h1>Awards</h1>
-            <ul>
-                <li>
-                    <div class="item">
-                        <div class="date">2023</div>
-                        <div class="event">Travel grant for the 30th Meeting of the Hellenic Society for Neuroscience</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="item">
-                        <div class="date">2021-2024</div>
-                        <div class="event">PhD scholarship, Marie Skłodowska-Curie Actions, Horizon 2020 programme of
-                            the European Union </div>
-                    </div>
-                </li>
-
-                <div class="end">August, 2024</div>
-            </ul>
-        </div>
-
-
-    </div>
-
-
-    <script src="main.js"></script>
-
-</body>
-
+        <script src="main.js"></script>
+    </body>
 </html>

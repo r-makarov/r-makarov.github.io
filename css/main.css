@@ -4,12 +4,35 @@
 .dark-mode * {
   color: black !important;
 }
-.dark-mode * .authors, .dark-mode * .authors b, .dark-mode * .journal, .dark-mode * .event * {
+.dark-mode * .authors,
+.dark-mode * .authors b,
+.dark-mode * .journal,
+.dark-mode * .event * {
   color: rgb(61, 61, 61) !important;
+}
+
+.dark-mode img {
+  filter: invert(1) hue-rotate(180deg) !important; /* Inverts the image colors */
 }
 
 .dark-mode a {
   color: dodgerblue !important;
+}
+
+.dark-mode .menu-item {
+  border-color: black !important;
+}
+.dark-mode .menu-item a {
+  color: black !important;
+}
+
+.dark-mode .download-button button {
+  background: white !important;
+  color: black !important;
+  border: 1px solid black !important;
+}
+.dark-mode .download-button button a {
+  color: black !important;
 }
 
 .dark-mode {
@@ -17,103 +40,167 @@
 }
 .dark-mode .main {
   background-color: white;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.dark-mode .main .end {
-  display: none;
 }
 
 body {
-  background: rgb(37, 37, 37);
-  font-family: "Inconsolata", monospace;
+  background: black;
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
 }
-body .navbar {
-  padding: 0px 5px;
-  color: brown;
-  display: flex;
-  justify-content: flex-end;
+body #top-div {
+  background-color: red;
+  position: fixed;
+  top: 10vh;
+  left: 50vw;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
 }
-body .navbar .toggle-switch {
-  height: 10px;
-  width: 30px;
+body .left-menu {
+  position: fixed;
+  left: 5vw;
+  top: 25vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background-color: darkgray;
-  margin: 2px;
-  margin-bottom: 5px;
-  border-radius: 50px;
+  justify-content: space-between;
+  height: 50vh;
+  width: 200px;
+}
+body .left-menu .menu-item {
+  text-align: right;
+}
+body .left-menu .menu-item a {
+  margin: 10px 0;
+  padding-right: 20px;
+  font-size: 1.5em;
+  font-weight: 400;
+  color: white;
   cursor: pointer;
-  padding: 2px;
+  transition: 0.3s;
+  text-decoration: none;
 }
-body .navbar .toggle-switch .toggle-knob {
-  width: 10px;
-  height: 10px;
-  display: inline-block;
-  background-color: rgb(37, 37, 37);
-  border-radius: 10px;
-  margin-left: 20px;
+body .left-menu .menu-item:hover {
+  color: white;
 }
-body .navbar .toggle-switch.active .toggle-knob {
-  background-color: rgb(233, 233, 233);
+body .left-menu .selected {
+  color: white;
+  border-right: 2px solid white;
 }
-body .navbar .toggle-switch.active .toggle-knob {
-  margin-left: 0px;
+body .buttons {
+  position: fixed;
+  right: 5vw;
+  top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 80vh;
+}
+body .buttons .download-button button {
+  padding: 10px 20px;
+  font-size: 1.5em;
+  font-weight: 300;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+}
+body .buttons .download-button button:hover {
+  background: darkgray;
+  color: black;
+}
+body .buttons .download-button button a {
+  color: white;
+  text-decoration: none;
+}
+body .buttons .theme-button button {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+body .buttons .theme-button button #theme-icon {
+  width: 45px;
+  height: 45px;
 }
 body .main {
-  background: rgba(80, 80, 80, 0.1);
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  min-height: 95vh;
   width: 700px;
 }
-body .main .name-surname {
-  padding-top: 10px;
-  color: whitesmoke;
-  font-size: 3em;
-  margin: 0 20px;
+body .main #summary-section {
+  color: white;
+  padding: 22vh 100px 50vh 20px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: left;
 }
-body .main .name-surname .name {
+body .main #summary-section .name-surname {
+  color: white;
+  font-size: 3em;
+  font-weight: 500;
+  display: flex;
+  justify-content: left;
+}
+body .main #summary-section .name-surname .name {
   color: white;
 }
-body .main .name-surname .surname {
+body .main #summary-section .name-surname .surname {
   color: white;
   padding-left: 15px;
-  font-weight: 600;
 }
-body .main .contacts {
-  color: whitesmoke;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 5px;
+body .main #summary-section ul {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-bottom: 30px;
+  text-align: justify;
+  list-style-type: none;
+  padding: 0;
 }
-body .main .links {
+body .main #summary-section li {
+  padding-left: 5px;
+  margin-bottom: 10px;
+}
+body .main #summary-section li:before {
+  content: ""; /* Removes the custom markers */
+}
+body .main #summary-section .links {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding-bottom: 10px;
+  padding-right: 150px;
 }
-body .main .links a {
+body .main #summary-section .links img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+body .main #summary-section .links a {
   color: tan;
-  margin: 5px 10px;
+  margin: 5px 5px;
 }
 body .main .section {
-  margin: 0 20px;
-  color: whitesmoke;
+  margin: 0 0 100px 0px;
+  color: white;
+}
+body .main .section h1 {
+  font-size: 2em;
+  font-weight: 500;
+  margin-bottom: 20px;
 }
 body .main .section .publication-type {
   color: white;
-  font-weight: bold;
+  font-weight: 400;
 }
 body .main .section .item {
   margin: 10px 10px;
-  color: whitesmoke;
+  color: white;
 }
 body .main .section .item a {
   color: tan;
@@ -122,13 +209,13 @@ body .main .section .item .date {
   float: right;
 }
 body .main .section .item .position-title {
-  font-weight: bold;
+  font-weight: 400;
   font-size: larger;
   color: white;
 }
 body .main .section .item .title {
   width: 90%;
-  color: whitesmoke;
+  color: white;
 }
 body .main .section .item .authors {
   width: 90%;
@@ -156,7 +243,6 @@ body .main .section .skills-tree span {
 }
 body .main .section .skills-tree li {
   font-size: larger;
-  font-weight: bold;
   color: white;
   margin: 10px 0px;
 }
@@ -166,7 +252,6 @@ body .main .section .skills-tree li ul {
 body .main .section .skills-tree li ul li {
   font-size: medium;
   color: white;
-  font-weight: normal;
 }
 body .main .section .skills-tree li ul li ul {
   margin-bottom: 0px;
@@ -195,11 +280,11 @@ body .main .section .skills-tree li ul li:last-child ul li::marker {
   color: rgba(129, 110, 81, 0.5);
 }
 body .main .section .skills-tree li::marker {
-  color: whitesmoke;
+  color: white;
 }
 body .main .end {
   opacity: 50%;
-  margin: 50px 0;
+  margin: 70vh 0 50px 0;
   text-align: center;
 }
 
@@ -211,5 +296,11 @@ img {
 @media only screen and (max-width: 500px) {
   .date {
     float: none !important;
+  }
+  .left-menu {
+    display: none !important;
+  }
+  .buttons {
+    display: none !important;
   }
 }/*# sourceMappingURL=main.css.map */
