@@ -43,6 +43,7 @@
 }
 
 body {
+  width: 96vw;
   background: black;
   font-family: "Open Sans", sans-serif;
   font-weight: normal;
@@ -132,7 +133,7 @@ body .main {
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  width: 42vw;
+  width: 42%;
 }
 body .main #summary-section {
   color: white;
@@ -282,6 +283,8 @@ body .main .section .skills-tree li::marker {
   color: white;
 }
 body .main .end {
+  align-self: center;
+  color: darkgray;
   opacity: 50%;
   margin: 70vh 0 50px 0;
   text-align: center;
@@ -292,7 +295,7 @@ img {
   height: 30px;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
   #summary-section .name-surname {
     font-size: 2.5em !important;
   }
@@ -303,12 +306,15 @@ img {
     width: 30px !important;
     height: 30px !important;
   }
+  body {
+    text-wrap: wrap;
+    word-break: normal;
+  }
   .main {
-    width: 100vw !important;
-    padding: 0 50px;
+    width: 100% !important;
+    padding: 0;
     margin: 0;
     padding-right: 0;
-    background-color: gray;
   }
   .date {
     float: none !important;
@@ -318,5 +324,8 @@ img {
   }
   .buttons {
     display: none !important;
+  }
+  .end {
+    align-self: center;
   }
 }/*# sourceMappingURL=main.css.map */
