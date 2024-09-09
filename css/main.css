@@ -177,13 +177,18 @@ body .main #summary-section .links {
   padding-bottom: 10px;
 }
 body .main #summary-section .links img {
-  width: 42px;
-  height: 42px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
 }
 body .main #summary-section .links a {
   color: tan;
   margin: 5px 5px;
+}
+body .main #summary-section #down-arrow {
+  width: 150px;
+  height: 150px;
+  margin-top: 200px;
 }
 body .main .section {
   margin: 0 0 100px 0px;
@@ -296,15 +301,14 @@ img {
 }
 
 @media only screen and (max-width: 1000px) {
+  #summary-section {
+    padding: 22vh 50px 5vh 20px !important;
+  }
   #summary-section .name-surname {
     font-size: 2.5em !important;
   }
   #summary-section ul {
     font-size: 1em !important;
-  }
-  #summary-section .links img {
-    width: 30px !important;
-    height: 30px !important;
   }
   body {
     text-wrap: wrap;
