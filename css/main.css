@@ -306,6 +306,9 @@ img {
   #summary-section .name-surname {
     font-size: 2.5em !important;
   }
+  #summary-section ul {
+    font-size: 1.25em !important;
+  }
   body {
     text-wrap: wrap;
     word-break: normal;
