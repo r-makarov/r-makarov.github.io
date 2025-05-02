@@ -1,6 +1,6 @@
 $dark-background: black;
 $light-background: white;
-$main-color: white;
+$main-color: lightgray;
 $highlight-color: white;
 $dim-color: darkgray;
 // $link-color: rgba(255, 166, 0, 0.7);
@@ -15,11 +15,57 @@ $large-font: 3em;
 $medium-font: 1.5em;
 $normal-font: 1em;
 
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&family=Source+Serif+Pro:wght@400;600&display=swap');
+
+// Color Scheme
+$dark-bg: #121212;
+$dark-surface: #1e1e1e;
+$light-bg: #fafafa;
+$light-surface: #ffffff;
+
+// Dark Mode Colors
+$dark-text-primary: rgba(255, 255, 255, 0.87);
+$dark-text-secondary: rgba(255, 255, 255, 0.6);
+$dark-text-tertiary: rgba(255, 255, 255, 0.38);
+$dark-accent: #bb86fc; // Purple-ish accent
+$dark-link: #90caf9; // Light blue for links
+
+// Light Mode Colors
+$light-text-primary: rgba(0, 0, 0, 0.87);
+$light-text-secondary: rgba(0, 0, 0, 0.6);
+$light-text-tertiary: rgba(0, 0, 0, 0.38);
+$light-accent: #6200ee; // Deep purple accent
+$light-link: #1565c0; // Blue for links
+
+// Font Sizes
+$font-size-xxl: 2.5rem;
+$font-size-xl: 2rem;
+$font-size-lg: 1.5rem;
+$font-size-md: 1.25rem;
+$font-size-base: 1rem;
+$font-size-sm: 0.875rem;
+$font-size-xs: 0.75rem;
+
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-xxl: 3rem;
+
+// Transitions
+$transition-standard: all 0.3s ease;
+
+// Breakpoints
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 .dark-mode * {
-    color: black !important;
+
 
     .authors,
     .authors b,
@@ -66,10 +112,21 @@ $normal-font: 1em;
     }
 }
 
+#down-arrow {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    transform: translateX(-100%);
+    cursor: pointer;
+}
+
 body {
     width: 96vw;
-    background: $dark-background;
-    font-family: 'Open Sans', sans-serif;
+    background: $dark-bg;
+    color: $main-color;
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: normal;
     display: flex;
     flex-direction: row;
@@ -85,42 +142,6 @@ body {
         width: 20px;
         height: 20px;
         border-radius: 20px;
-    }
-
-    .left-menu {
-        position: fixed;
-        left: 5vw;
-        top: 25vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 50vh;
-        width: 200px;
-        // padding-right: 42px;
-        // border-right: 1px solid $main-color;
-
-        .menu-item {
-            text-align: right;
-            a {
-                margin: 10px 0;
-                padding-right: 20px;
-                font-size: $medium-font;
-                font-weight: $normal-weight;
-                color: $main-color;
-                cursor: pointer;
-                transition: 0.3s;
-                text-decoration: none;
-            }
-
-            &:hover {
-                color: $highlight-color;
-            }
-        }
-
-        .selected {
-            color: $highlight-color;
-            border-right: 2px solid $highlight-color;
-        }
     }
 
     .buttons {
@@ -143,8 +164,7 @@ body {
                 cursor: pointer;
 
                 &:hover {
-                    background: $dim-color;
-                    color: black;
+                    background: #553c74;
                 }
 
                 a {
@@ -170,7 +190,7 @@ body {
         }
     }
 
-    .main {
+    main {
         flex-direction: column;
         flex-wrap: nowrap;
         justify-content: flex-start;
@@ -179,40 +199,59 @@ body {
 
         #summary-section {
             color: $main-color;
-            padding: 22vh 100px 0vh 20px;
+            // padding: 22vh 100px 0vh 20px;
+            padding-top: 12vh;
             display: flex;
             flex-direction: column;
-            justify-content: left;
+            justify-content: center;
+            align-items: center;
+
+            #profile-image {
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                margin-bottom: $spacing-lg;
+              }
 
             .name-surname {
-                color: $main-color;
                 font-size: $large-font;
                 font-weight: $bold-weight;
                 display: flex;
                 justify-content: left;
                 .name {
-                    color: $highlight-color;
+                    color: $dark-accent;
                 }
                 .surname {
-                    color: $highlight-color;
+                    color: $dark-accent;
                     padding-left: 15px;
                 }
             }
 
-            ul {
-                font-size: $medium-font;
-                font-weight: $normal-weight;
-                margin-bottom: 30px;
-                text-align: justify;
-                list-style-type: none; // Removes the default list markers
-                padding: 0;
-            }
+            .keywords {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                ul {
+                    font-size: $font-size-md;
+                    font-weight: $normal-weight;
+                    text-align: center;
+                    list-style-type: none; // Removes the default list markers
+                    padding: 0;
+                    margin: 0;
+                    margin-bottom: 15px;
+                    display: flex; // Makes the list horizontal
+                    flex-wrap: wrap; // Prevents items from wrapping to the next line
+                    gap: $spacing-sm; // Adds spacing between items
+                    justify-content: center; // Centers the list items horizontally
+                }
 
-            li {
-                padding-left: 5px;
-                margin-bottom: 10px;
-                &:before {
-                    content: ''; /* Removes the custom markers */
+                li {
+                    padding: 0;
+                    margin: 0;
+                    &:not(:last-child):after {
+                        content: ' ● '; // Adds a circular separator between items
+                        color: rgb(65, 65, 65); // Color of the separator
+                        padding: 0 10px; // Space between the item and the separator
+                    }
                 }
             }
 
@@ -220,11 +259,19 @@ body {
                 display: flex;
                 justify-content: left;
                 padding-bottom: 10px;
+                margin-bottom: 300px;
                 // padding-right: 150px;
                 img {
-                    width: 52px;
-                    height: 52px;
-                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    opacity: 70%;
+                    filter: grayscale(100%);
+                    &:hover {
+                        transform: scale(1.1);
+                        transition: 0.3s;
+                        opacity: 100%;
+                        filter: grayscale(0%);
+                    }
                 }
 
                 a {
@@ -233,14 +280,7 @@ body {
                 }
             }
 
-            #down-arrow {
-                width: 150px;
-                height: 150px;
-                margin-top: 180px;
-                // margin-left: 10px;
-                // align-self: center;
-                // cursor: pointer;
-            }
+            
         }
 
         .section {
@@ -253,6 +293,10 @@ body {
                 font-size: 2em;
                 font-weight: $bold-weight;
                 margin-bottom: 20px;
+            }
+
+            h2 {
+                color: $dark-accent;
             }
 
             .publication-type {
@@ -275,7 +319,7 @@ body {
                 .position-title {
                     font-weight: $normal-weight;
                     font-size: larger;
-                    color: $highlight-color;
+                    color: $dark-accent;
                 }
 
                 .title {
@@ -308,67 +352,9 @@ body {
                 }
             }
 
-            .skills-tree {
-                padding-inline-start: 28px;
-                span {
-                    color: $dim-color;
-                }
-                li {
-                    font-size: larger;
-                    color: $highlight-color;
-                    margin: 10px 0px;
-                    ul {
-                        margin-bottom: 10px;
-
-                        li {
-                            font-size: medium;
-
-                            color: $main-color;
-                            ul {
-                                margin-bottom: 0px;
-                                li {
-                                    font-size: smaller;
-                                }
-                                li::marker {
-                                    content: '│      ├── ';
-                                    letter-spacing: 0px;
-                                }
-                                li:last-child::marker {
-                                    content: '│      └── ';
-                                    letter-spacing: 0px;
-                                }
-                            }
-                        }
-                        li::marker {
-                            content: '├── ';
-                            color: rgba(129, 110, 81, 0.5);
-                        }
-                        li:last-child::marker {
-                            content: '└── ';
-                            color: rgba(129, 110, 81, 0.5);
-                        }
-                        li:last-child {
-                            ul {
-                                li::marker {
-                                    content: '└── ';
-                                    color: rgba(129, 110, 81, 0.5);
-                                }
-                            }
-                        }
-                    }
-                }
-                li::marker {
-                    color: $main-color;
-                }
-            }
+            
         }
-        .end {
-            align-self: center;
-            color: $dim-color;
-            opacity: 50%;
-            margin: 70vh 0 50px 0;
-            text-align: center;
-        }
+
     }
 
 
@@ -389,12 +375,6 @@ img {
         ul {
             font-size: 1.25em !important;
         }
-        // .links {
-        //     img {
-        //         width: 62px !important;
-        //         height: 62px !important;
-        //     }
-        // }
         
     }
 
@@ -426,4 +406,216 @@ img {
     .end {
         align-self: center;
     }
+}
+
+// Navigation
+.navigation {
+    position: fixed;
+    left: 5vw;
+    top: 25vh;
+    width: 200px;
+    z-index: 10;
+    
+    @media (max-width: $breakpoint-mobile) {
+      display: none;
+    }
+  }
+  
+  .nav-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+  
+  .nav-item {
+    text-align: right;
+    
+    a {
+      display: block;
+      color: $dark-text-primary;
+      text-decoration: none;
+      font-size: $font-size-md;
+      padding: $spacing-sm $spacing-md;
+      transition: $transition-standard;
+      position: relative;
+      
+      &:hover {
+        color: $dark-accent;
+      }
+    }
+    
+    &.active a {
+      color: $dark-accent;
+      border-right: 2px solid $dark-accent;
+    }
+  }
+
+// CV Sections
+.cv-section {
+    margin: $spacing-xxl 0;
+    padding: $spacing-xl 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    
+    &:first-of-type {
+      border-top: none;
+    }
+    
+    h2 {
+      font-size: $font-size-xl;
+      margin-bottom: $spacing-xl;
+      font-weight: 600;
+      font-family: 'Source Serif Pro', Georgia, serif;
+    }
+  }
+
+// Entries
+.entry {
+    margin-bottom: $spacing-lg;
+    position: relative;
+    
+    .entry-date {
+      color: $dark-text-secondary;
+      font-size: $font-size-base;
+      display: block;
+      margin-bottom: $spacing-xs;
+      
+      @media (min-width: $breakpoint-mobile) {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+
+    a {
+        color: $dark-link;
+        text-decoration: none;
+        font-size: $font-size-sm;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    
+    .entry-title {
+      max-width: 90%;
+      font-size: $font-size-lg;
+      color: white;
+      margin-bottom: $spacing-sm;
+      font-weight: 400;
+    }
+    
+    .entry-institution {
+      margin-bottom: $spacing-xs;
+    }
+    
+    .entry-location {
+      font-size: $font-size-sm;
+      color: $dark-text-tertiary;
+      margin-top: $spacing-xs;
+    }
+    
+    .entry-description {
+       max-width: 90%;
+      .presentation-type {
+        color: $dark-text-secondary;
+        font-style: italic;
+      }
+    }
+
+
+  }
+
+  // Publications
+.publication-category {
+    margin-bottom: $spacing-xl;
+    
+    h3 {
+      font-size: $font-size-lg;
+      margin-bottom: $spacing-md;
+      color: white;
+      font-weight: 600;
+    }
+  }
+  
+  .publication-list {
+    padding-left: $spacing-md;
+    
+    li {
+      margin-bottom: $spacing-lg;
+    }
+  }
+  
+  .publication {
+    margin-bottom: $spacing-lg;
+    position: relative;
+    .publication-date {
+        color: $dark-text-secondary;
+        font-size: $font-size-base;
+        display: block;
+        margin-bottom: $spacing-xs;
+        
+        @media (min-width: $breakpoint-mobile) {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+    }
+    
+    .publication-authors {
+      max-width: 90%;
+      margin-bottom: $spacing-xs;
+      color: $dark-text-secondary;
+    }
+    
+    .publication-title {
+      max-width: 90%;
+      margin-bottom: $spacing-xs;
+      font-weight: 600;
+    }
+    
+    .publication-journal {
+      max-width: 90%;
+      font-style: italic;
+      color: $dark-text-secondary;
+      margin-bottom: $spacing-xs;
+    }
+    
+    .publication-link {
+      color: $dark-link;
+      text-decoration: none;
+      font-size: $font-size-sm;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+// Footer
+.document-footer {
+    text-align: center;
+    padding: $spacing-xxl 0;
+    color: $dark-text-tertiary;
+    font-size: $font-size-sm;
+  }
+
+
+  a {
+    color: rgb(160, 160, 160);
+    text-decoration: underline;
+    transition: $transition-standard;
+    
+    &:hover {
+      color: $dark-accent;
+    }
+  }
+
+
+  footer {
+    align-self: center;
+    color: $dim-color;
+    opacity: 50%;
+    margin: 70vh 0 50px 0;
+    text-align: center;
 }
