@@ -1,21 +1,6 @@
-$dark-background: black;
-$light-background: white;
-$main-color: lightgray;
-$highlight-color: white;
-$dim-color: darkgray;
-// $link-color: rgba(255, 166, 0, 0.7);
-$link-color: tan;
-$location-color: lightblue;
-$nice-color: rgb(146, 73, 73);
-
-$bold-weight: 500;
-$normal-weight: 400;
-
-$large-font: 3em;
-$medium-font: 1.5em;
-$normal-font: 1em;
-
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&family=Source+Serif+Pro:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 // Color Scheme
 $dark-bg: #121212;
@@ -37,7 +22,12 @@ $light-text-tertiary: rgba(0, 0, 0, 0.38);
 $light-accent: #6200ee; // Deep purple accent
 $light-link: #1565c0; // Blue for links
 
+// Font Weights
+$bold-weight: 500;
+$normal-weight: 400;
+
 // Font Sizes
+$font-size-xxxl: 3rem;
 $font-size-xxl: 2.5rem;
 $font-size-xl: 2rem;
 $font-size-lg: 1.5rem;
@@ -61,58 +51,221 @@ $transition-standard: all 0.3s ease;
 $breakpoint-mobile: 768px;
 $breakpoint-tablet: 1024px;
 
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+// Global Styles
+body {
+    width: 96vw;
+    background: $dark-bg;
+    color: $dark-text-primary;
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: normal;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
 
-.dark-mode * {
+    main {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        width: 42%;
 
-
-    .authors,
-    .authors b,
-    .journal,
-    .event * {
-        color: rgb(61, 61, 61) !important;
+        @media (max-width: $breakpoint-mobile) {
+            width: 90%;
+        }
+        @media (min-width: $breakpoint-tablet) {
+            width: 60%;
+        }
     }
 }
 
+// Buttons
 
-    .dark-mode img {
-        filter: invert(1) hue-rotate(180deg) !important; /* Inverts the image colors */
-    }
+.buttons {
+  position: fixed;
+  right: 5vw;
+  top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 80vh;
 
-.dark-mode a {
-    color: dodgerblue !important;
+  @media (max-width: $breakpoint-tablet) {
+    display: none;
+  }
+
+  .download-button {
+      button {
+          padding: 10px 20px;
+          font-size: $font-size-lg;
+          font-weight: 300;
+          background: rgb(0, 0, 0, 0);
+          color: $dark-text-primary;
+          border: 1px solid $dark-text-primary;
+          cursor: pointer;
+
+          &:hover {
+              background: #553c74;
+          }
+
+          a {
+              color: $dark-text-primary;
+              text-decoration: none;
+          }
+      }
+  }
+
+  .theme-button {
+      button {
+          padding: 10px;
+          background: rgb(0, 0, 0, 0);
+          border: none;
+          cursor: pointer;
+          outline: none;
+
+          #theme-icon {
+              width: 45px;
+              height: 45px;
+          }
+      }
+  }
 }
 
-.dark-mode .menu-item {
-    border-color: black !important;
-    a {
-    color: black !important;
-    }
+
+// Navigation
+.navigation {
+  position: fixed;
+  left: 5vw;
+  top: 25vh;
+  width: 200px;
+  z-index: 10;
+  
+  @media (max-width: $breakpoint-mobile) {
+    display: none;
+  }
 }
 
-.dark-mode .download-button button {
-    background: white !important;
-    color: black !important;
-    border: 1px solid black !important;
-    a {
-        color: black !important;
-    }
+.nav-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
 }
 
-.dark-mode {
-    background-color: white;
-
-    .main {
-        background-color: white;
-        // font-family: Arial, Helvetica, sans-serif;
-        // .end {
-        //     display: none;
-        // }
+.nav-item {
+  text-align: right;
+  
+  a {
+    display: block;
+    color: $dark-text-primary;
+    text-decoration: none;
+    font-size: $font-size-md;
+    padding: $spacing-sm $spacing-md;
+    transition: $transition-standard;
+    position: relative;
+    
+    &:hover {
+      color: $dark-accent;
     }
+  }
+  
+  &.active a {
+    color: $dark-accent;
+    border-right: 2px solid $dark-accent;
+  }
 }
 
-#down-arrow {
+#summary-section {
+  padding-top: 12vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  #profile-image {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      margin-bottom: $spacing-lg;
+    }
+
+  .name-surname {
+      font-size: $font-size-xxxl;
+      font-weight: $bold-weight;
+      display: flex;
+      justify-content: left;
+      .name {
+          color: $dark-accent;
+      }
+      .surname {
+          color: $dark-accent;
+          padding-left: 15px;
+      }
+  }
+
+  .keywords {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      ul {
+          font-size: $font-size-md;
+          font-weight: $normal-weight;
+          text-align: center;
+          list-style-type: none; // Removes the default list markers
+          padding: 0;
+          margin: 0;
+          margin-bottom: 15px;
+          display: flex; // Makes the list horizontal
+          flex-wrap: wrap; // Prevents items from wrapping to the next line
+          gap: $spacing-sm; // Adds spacing between items
+          justify-content: center; // Centers the list items horizontally
+
+          @media screen and (max-width: $breakpoint-mobile) {
+              flex-direction: column; // Stacks items vertically on mobile
+              align-items: center; // Centers items vertically
+          }
+      }
+
+      li {
+          padding: 0;
+          margin: 0;
+          &:not(:last-child):after {
+              content: ' ● '; // Adds a circular separator between items
+              color: rgb(65, 65, 65); // Color of the separator
+              padding: 0 10px; // Space between the item and the separator
+
+              @media screen and (max-width: $breakpoint-mobile) {
+                  content: ''; // Removes the separator on mobile
+                
+              }
+          }
+      }
+  }
+
+  .links {
+      display: flex;
+      justify-content: left;
+      padding-bottom: 10px;
+      margin-bottom: 300px;
+      // padding-right: 150px;
+      img {
+          width: 50px;
+          height: 50px;
+          opacity: 70%;
+          filter: grayscale(100%);
+          &:hover {
+              transform: scale(1.1);
+              transition: 0.3s;
+              opacity: 100%;
+              filter: grayscale(0%);
+          }
+      }
+
+      a {
+          margin: 5px 5px;
+      }
+  }
+
+  #down-arrow {
     position: fixed;
     bottom: 20px;
     left: 50%;
@@ -120,336 +273,10 @@ $breakpoint-tablet: 1024px;
     height: 50px;
     transform: translateX(-100%);
     cursor: pointer;
-}
-
-body {
-    width: 96vw;
-    background: $dark-bg;
-    color: $main-color;
-    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: normal;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    
-
-    #top-div {
-        background-color: red;
-        position: fixed;
-        top: 10vh;
-        left: 50vw;
-        width: 20px;
-        height: 20px;
-        border-radius: 20px;
-    }
-
-    .buttons {
-        position: fixed;
-        right: 5vw;
-        top: 10vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        height: 80vh;
-        .download-button {
-            button {
-                padding: 10px 20px;
-                font-size: $medium-font;
-                font-weight: 300;
-                background: rgb(0, 0, 0, 0);
-                color: $main-color;
-                border: 1px solid $main-color;
-                cursor: pointer;
-
-                &:hover {
-                    background: #553c74;
-                }
-
-                a {
-                    color: $main-color;
-                    text-decoration: none;
-                }
-            }
-        }
-
-        .theme-button {
-            button {
-                padding: 10px;
-                background: rgb(0, 0, 0, 0);
-                border: none;
-                cursor: pointer;
-                outline: none;
-
-                #theme-icon {
-                    width: 45px;
-                    height: 45px;
-                }
-            }
-        }
-    }
-
-    main {
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        width: 42%;
-        // padding-left: 50px;
-
-        #summary-section {
-            color: $main-color;
-            // padding: 22vh 100px 0vh 20px;
-            padding-top: 12vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            #profile-image {
-                width: 300px;
-                height: 300px;
-                border-radius: 50%;
-                margin-bottom: $spacing-lg;
-              }
-
-            .name-surname {
-                font-size: $large-font;
-                font-weight: $bold-weight;
-                display: flex;
-                justify-content: left;
-                .name {
-                    color: $dark-accent;
-                }
-                .surname {
-                    color: $dark-accent;
-                    padding-left: 15px;
-                }
-            }
-
-            .keywords {
-                padding-top: 20px;
-                padding-bottom: 20px;
-                ul {
-                    font-size: $font-size-md;
-                    font-weight: $normal-weight;
-                    text-align: center;
-                    list-style-type: none; // Removes the default list markers
-                    padding: 0;
-                    margin: 0;
-                    margin-bottom: 15px;
-                    display: flex; // Makes the list horizontal
-                    flex-wrap: wrap; // Prevents items from wrapping to the next line
-                    gap: $spacing-sm; // Adds spacing between items
-                    justify-content: center; // Centers the list items horizontally
-                }
-
-                li {
-                    padding: 0;
-                    margin: 0;
-                    &:not(:last-child):after {
-                        content: ' ● '; // Adds a circular separator between items
-                        color: rgb(65, 65, 65); // Color of the separator
-                        padding: 0 10px; // Space between the item and the separator
-                    }
-                }
-            }
-
-            .links {
-                display: flex;
-                justify-content: left;
-                padding-bottom: 10px;
-                margin-bottom: 300px;
-                // padding-right: 150px;
-                img {
-                    width: 50px;
-                    height: 50px;
-                    opacity: 70%;
-                    filter: grayscale(100%);
-                    &:hover {
-                        transform: scale(1.1);
-                        transition: 0.3s;
-                        opacity: 100%;
-                        filter: grayscale(0%);
-                    }
-                }
-
-                a {
-                    color: $link-color;
-                    margin: 5px 5px;
-                }
-            }
-
-            
-        }
-
-        .section {
-            margin: 0 0 100px 0px;
-            color: $main-color;
-            padding-left: 15px;
-            padding-right: 15px;
-
-            h1 {
-                font-size: 2em;
-                font-weight: $bold-weight;
-                margin-bottom: 20px;
-            }
-
-            h2 {
-                color: $dark-accent;
-            }
-
-            .publication-type {
-                color: $highlight-color;
-                font-weight: $normal-weight;
-            }
-
-            .item {
-                margin: 10px 10px;
-                color: $main-color;
-
-                a {
-                    color: $link-color;
-                }
-
-                .date {
-                    float: right;
-                }
-
-                .position-title {
-                    font-weight: $normal-weight;
-                    font-size: larger;
-                    color: $dark-accent;
-                }
-
-                .title {
-                    width: 90%;
-                    color: $main-color;
-                }
-
-                .authors {
-                    width: 90%;
-                    overflow-wrap: break-word;
-                    color: $dim-color;
-                }
-
-                .journal {
-                    width: 90%;
-                    overflow-wrap: break-word;
-                    color: $dim-color;
-                }
-
-                .location {
-                    color: $location-color;
-                    font-size: smaller;
-                    opacity: 70%;
-                }
-
-                .event {
-                    span {
-                        color: $dim-color;
-                    }
-                }
-            }
-
-            
-        }
-
-    }
-
-
-}
-
-img {
-    width: 30px;
-    height: 30px;
-}
-
-@media only screen and (max-width: 1000px) {
-
-    #summary-section {
-
-        .name-surname {
-            font-size: 2.5em !important;
-        }
-        ul {
-            font-size: 1.25em !important;
-        }
-        
-    }
-
-
-    body {
-        text-wrap: wrap;
-        word-break:normal;
-    }
-
-
-    .main {
-        width: 100% !important;
-        padding: 0;
-        margin: 0;
-        padding-right: 0;
-    }
-    .date {
-        float: none !important;
-    }
-
-    .left-menu {
-        display: none !important;
-    }
-
-    .buttons {
-        display: none !important;
-    }
-
-    .end {
-        align-self: center;
-    }
-}
-
-// Navigation
-.navigation {
-    position: fixed;
-    left: 5vw;
-    top: 25vh;
-    width: 200px;
-    z-index: 10;
-    
-    @media (max-width: $breakpoint-mobile) {
-      display: none;
-    }
   }
+
   
-  .nav-menu {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-md;
-  }
-  
-  .nav-item {
-    text-align: right;
-    
-    a {
-      display: block;
-      color: $dark-text-primary;
-      text-decoration: none;
-      font-size: $font-size-md;
-      padding: $spacing-sm $spacing-md;
-      transition: $transition-standard;
-      position: relative;
-      
-      &:hover {
-        color: $dark-accent;
-      }
-    }
-    
-    &.active a {
-      color: $dark-accent;
-      border-right: 2px solid $dark-accent;
-    }
-  }
+}
 
 // CV Sections
 .cv-section {
@@ -598,10 +425,12 @@ img {
     padding: $spacing-xxl 0;
     color: $dark-text-tertiary;
     font-size: $font-size-sm;
+    margin: 70vh 0 50px 0;
   }
 
 
-  a {
+// Links
+a {
     color: rgb(160, 160, 160);
     text-decoration: underline;
     transition: $transition-standard;
@@ -609,13 +438,4 @@ img {
     &:hover {
       color: $dark-accent;
     }
-  }
-
-
-  footer {
-    align-self: center;
-    color: $dim-color;
-    opacity: 50%;
-    margin: 70vh 0 50px 0;
-    text-align: center;
 }

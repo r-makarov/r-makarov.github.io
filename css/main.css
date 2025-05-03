@@ -2,58 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&family=Source+Serif+Pro:wght@400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
-.dark-mode * .authors,
-.dark-mode * .authors b,
-.dark-mode * .journal,
-.dark-mode * .event * {
-  color: rgb(61, 61, 61) !important;
-}
-
-.dark-mode img {
-  filter: invert(1) hue-rotate(180deg) !important; /* Inverts the image colors */
-}
-
-.dark-mode a {
-  color: dodgerblue !important;
-}
-
-.dark-mode .menu-item {
-  border-color: black !important;
-}
-.dark-mode .menu-item a {
-  color: black !important;
-}
-
-.dark-mode .download-button button {
-  background: white !important;
-  color: black !important;
-  border: 1px solid black !important;
-}
-.dark-mode .download-button button a {
-  color: black !important;
-}
-
-.dark-mode {
-  background-color: white;
-}
-.dark-mode .main {
-  background-color: white;
-}
-
-#down-arrow {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  width: 50px;
-  height: 50px;
-  transform: translateX(-100%);
-  cursor: pointer;
-}
-
 body {
   width: 96vw;
   background: #121212;
-  color: lightgray;
+  color: rgba(255, 255, 255, 0.87);
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: normal;
   display: flex;
@@ -61,16 +13,24 @@ body {
   flex-wrap: nowrap;
   justify-content: center;
 }
-body #top-div {
-  background-color: red;
-  position: fixed;
-  top: 10vh;
-  left: 50vw;
-  width: 20px;
-  height: 20px;
-  border-radius: 20px;
+body main {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  width: 42%;
 }
-body .buttons {
+@media (max-width: 768px) {
+  body main {
+    width: 90%;
+  }
+}
+@media (min-width: 1024px) {
+  body main {
+    width: 60%;
+  }
+}
+
+.buttons {
   position: fixed;
   right: 5vw;
   top: 10vh;
@@ -80,205 +40,39 @@ body .buttons {
   align-items: center;
   height: 80vh;
 }
-body .buttons .download-button button {
+@media (max-width: 1024px) {
+  .buttons {
+    display: none;
+  }
+}
+.buttons .download-button button {
   padding: 10px 20px;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: 300;
   background: rgba(0, 0, 0, 0);
-  color: lightgray;
-  border: 1px solid lightgray;
+  color: rgba(255, 255, 255, 0.87);
+  border: 1px solid rgba(255, 255, 255, 0.87);
   cursor: pointer;
 }
-body .buttons .download-button button:hover {
+.buttons .download-button button:hover {
   background: #553c74;
 }
-body .buttons .download-button button a {
-  color: lightgray;
+.buttons .download-button button a {
+  color: rgba(255, 255, 255, 0.87);
   text-decoration: none;
 }
-body .buttons .theme-button button {
+.buttons .theme-button button {
   padding: 10px;
   background: rgba(0, 0, 0, 0);
   border: none;
   cursor: pointer;
   outline: none;
 }
-body .buttons .theme-button button #theme-icon {
+.buttons .theme-button button #theme-icon {
   width: 45px;
   height: 45px;
 }
-body main {
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  width: 42%;
-}
-body main #summary-section {
-  color: lightgray;
-  padding-top: 12vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-body main #summary-section #profile-image {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  margin-bottom: 1.5rem;
-}
-body main #summary-section .name-surname {
-  font-size: 3em;
-  font-weight: 500;
-  display: flex;
-  justify-content: left;
-}
-body main #summary-section .name-surname .name {
-  color: #bb86fc;
-}
-body main #summary-section .name-surname .surname {
-  color: #bb86fc;
-  padding-left: 15px;
-}
-body main #summary-section .keywords {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-body main #summary-section .keywords ul {
-  font-size: 1.25rem;
-  font-weight: 400;
-  text-align: center;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 15px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-}
-body main #summary-section .keywords li {
-  padding: 0;
-  margin: 0;
-}
-body main #summary-section .keywords li:not(:last-child):after {
-  content: " ● ";
-  color: rgb(65, 65, 65);
-  padding: 0 10px;
-}
-body main #summary-section .links {
-  display: flex;
-  justify-content: left;
-  padding-bottom: 10px;
-  margin-bottom: 300px;
-}
-body main #summary-section .links img {
-  width: 50px;
-  height: 50px;
-  opacity: 70%;
-  filter: grayscale(100%);
-}
-body main #summary-section .links img:hover {
-  transform: scale(1.1);
-  transition: 0.3s;
-  opacity: 100%;
-  filter: grayscale(0%);
-}
-body main #summary-section .links a {
-  color: tan;
-  margin: 5px 5px;
-}
-body main .section {
-  margin: 0 0 100px 0px;
-  color: lightgray;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-body main .section h1 {
-  font-size: 2em;
-  font-weight: 500;
-  margin-bottom: 20px;
-}
-body main .section h2 {
-  color: #bb86fc;
-}
-body main .section .publication-type {
-  color: white;
-  font-weight: 400;
-}
-body main .section .item {
-  margin: 10px 10px;
-  color: lightgray;
-}
-body main .section .item a {
-  color: tan;
-}
-body main .section .item .date {
-  float: right;
-}
-body main .section .item .position-title {
-  font-weight: 400;
-  font-size: larger;
-  color: #bb86fc;
-}
-body main .section .item .title {
-  width: 90%;
-  color: lightgray;
-}
-body main .section .item .authors {
-  width: 90%;
-  overflow-wrap: break-word;
-  color: darkgray;
-}
-body main .section .item .journal {
-  width: 90%;
-  overflow-wrap: break-word;
-  color: darkgray;
-}
-body main .section .item .location {
-  color: lightblue;
-  font-size: smaller;
-  opacity: 70%;
-}
-body main .section .item .event span {
-  color: darkgray;
-}
 
-img {
-  width: 30px;
-  height: 30px;
-}
-
-@media only screen and (max-width: 1000px) {
-  #summary-section .name-surname {
-    font-size: 2.5em !important;
-  }
-  #summary-section ul {
-    font-size: 1.25em !important;
-  }
-  body {
-    text-wrap: wrap;
-    word-break: normal;
-  }
-  .main {
-    width: 100% !important;
-    padding: 0;
-    margin: 0;
-    padding-right: 0;
-  }
-  .date {
-    float: none !important;
-  }
-  .left-menu {
-    display: none !important;
-  }
-  .buttons {
-    display: none !important;
-  }
-  .end {
-    align-self: center;
-  }
-}
 .navigation {
   position: fixed;
   left: 5vw;
@@ -317,6 +111,100 @@ img {
 .nav-item.active a {
   color: #bb86fc;
   border-right: 2px solid #bb86fc;
+}
+
+#summary-section {
+  padding-top: 12vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#summary-section #profile-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+}
+#summary-section .name-surname {
+  font-size: 3rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: left;
+}
+#summary-section .name-surname .name {
+  color: #bb86fc;
+}
+#summary-section .name-surname .surname {
+  color: #bb86fc;
+  padding-left: 15px;
+}
+#summary-section .keywords {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#summary-section .keywords ul {
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  #summary-section .keywords ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+#summary-section .keywords li {
+  padding: 0;
+  margin: 0;
+}
+#summary-section .keywords li:not(:last-child):after {
+  content: " ● ";
+  color: rgb(65, 65, 65);
+  padding: 0 10px;
+}
+@media screen and (max-width: 768px) {
+  #summary-section .keywords li:not(:last-child):after {
+    content: "";
+  }
+}
+#summary-section .links {
+  display: flex;
+  justify-content: left;
+  padding-bottom: 10px;
+  margin-bottom: 300px;
+}
+#summary-section .links img {
+  width: 50px;
+  height: 50px;
+  opacity: 70%;
+  filter: grayscale(100%);
+}
+#summary-section .links img:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  opacity: 100%;
+  filter: grayscale(0%);
+}
+#summary-section .links a {
+  margin: 5px 5px;
+}
+#summary-section #down-arrow {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  transform: translateX(-100%);
+  cursor: pointer;
 }
 
 .cv-section {
@@ -446,6 +334,7 @@ img {
   padding: 3rem 0;
   color: rgba(255, 255, 255, 0.38);
   font-size: 0.875rem;
+  margin: 70vh 0 50px 0;
 }
 
 a {
@@ -455,12 +344,4 @@ a {
 }
 a:hover {
   color: #bb86fc;
-}
-
-footer {
-  align-self: center;
-  color: darkgray;
-  opacity: 50%;
-  margin: 70vh 0 50px 0;
-  text-align: center;
 }/*# sourceMappingURL=main.css.map */
