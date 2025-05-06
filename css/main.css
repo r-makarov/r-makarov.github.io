@@ -24,11 +24,6 @@ body main {
     width: 90%;
   }
 }
-@media (min-width: 1024px) {
-  body main {
-    width: 60%;
-  }
-}
 
 .buttons {
   position: fixed;
@@ -39,11 +34,7 @@ body main {
   justify-content: space-between;
   align-items: center;
   height: 80vh;
-}
-@media (max-width: 1024px) {
-  .buttons {
-    display: none;
-  }
+  display: none;
 }
 .buttons .download-button button {
   padding: 10px 20px;
@@ -122,7 +113,8 @@ body main {
 }
 @media screen and (max-width: 768px) {
   #summary-section {
-    padding-top: 2vh;
+    padding-top: 0;
+    margin-top: 2vh;
   }
 }
 #summary-section #profile-image {
